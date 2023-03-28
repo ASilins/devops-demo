@@ -9,6 +9,6 @@ jobs:
     name: My First Pipeline in DOCS
     runs-on: ubuntu-latest
     steps:
-      -uses: actions/checkout@v3
-      -name: Run a one-line script
-        run: echo "CI"
+      - uses: actions/checkout@v3
+      - name: Run a one-line script
+        run: echo "Continuous Integration"
