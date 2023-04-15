@@ -65,5 +65,5 @@ jobs:
 
       - name: Build the Docker Image
         run: |
-          docker build . --tag ghcr.io/${{github.actor}}/devops-demo:latest
-          docker push ghcr.io/${{github.actor}}/devops-demo:lates
+          docker build . --tag "ghcr.io/${{github.actor}}/devops-demo:latest"
+          docker push ghcr.io/${{github.actor}}/devops-demo:latest
