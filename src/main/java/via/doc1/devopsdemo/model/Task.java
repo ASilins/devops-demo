@@ -2,10 +2,21 @@ package via.doc1.devopsdemo.model;
 
 import java.util.Objects;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+
+@Entity(name = "Task")
+@Table(name = "task")
 public class Task {
+    @Id
     private String id;
     private String name;
     private String description;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private TeamMember teamMember;
 
     public Task() {
     }
@@ -51,8 +62,10 @@ public class Task {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
         Task task = (Task) o;
         return id.equals(task.id);
     }
